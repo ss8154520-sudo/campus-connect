@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect | College Portal</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Background Shapes -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <span>✦</span> Campus<span>Connect</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#clubs">Clubs</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="themeBtn" class="icon-btn">🌙</button>
+                <button class="login-btn" onclick="showLogin()">Student Login</button>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🚀 Smart Campus Experience
+            </div>
+
+            <h1>
+                Your Campus.<br>
+                <span>Your Community.</span>
+            </h1>
+
+            <p>
+                Discover college events, join communities, explore clubs,
+                stay updated with notices and make your campus life more exciting.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#events" class="primary-btn">
+                    Explore Events →
+                </a>
+
+                <button class="secondary-btn" onclick="showMessage()">
+                    Explore Campus
+                </button>
+            </div>
+
+            <div class="mini-stats">
+                <div>
+                    <strong>50+</strong>
+                    <small>Events</small>
+                </div>
+
+                <div>
+                    <strong>25+</strong>
+                    <small>Clubs</small>
+                </div>
+
+                <div>
+                    <strong>5K+</strong>
+                    <small>Students</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Hero Card -->
+        <div class="hero-card">
+
+            <div class="card-top">
+                <span>📢 Latest Update</span>
+                <span class="live">● LIVE</span>
+            </div>
+
+            <h3>Annual Tech Fest 2026</h3>
+
+            <p>
+                Join students from across the campus for coding,
+                innovation and exciting challenges.
+            </p>
+
+            <div class="event-info">
+                <span>📅 18 Sept 2026</span>
+                <span>📍 Main Auditorium</span>
+            </div>
+
+            <button onclick="registerEvent()" class="register-btn">
+                Register Now
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Search -->
+    <section class="search-section">
+
+        <div>
+            <p class="small-title">DISCOVER</p>
+            <h2>Find something exciting</h2>
+        </div>
+
+        <div class="search-box">
+            <span>🔎</span>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search events, clubs, activities..."
+            >
+            <button onclick="searchContent()">Search</button>
+        </div>
+
+    </section>
+
+
+    <!-- Events -->
+    <section id="events" class="section">
+
+        <div class="section-heading">
+            <div>
+                <p class="small-title">WHAT'S HAPPENING</p>
+                <h2>Upcoming Events</h2>
+            </div>
+
+            <button class="view-btn" onclick="showAllEvents()">
+                View All →
+            </button>
+        </div>
+
+
+        <div class="event-grid" id="eventGrid">
+
+            <article class="event-card">
+
+                <div class="event-date">
+                    <strong>18</strong>
+                    <span>SEP</span>
+                </div>
+
+                <div class="event-icon">💻</div>
+
+                <h3>CodeStorm 2026</h3>
+
+                <p>
+                    24-hour coding challenge for innovative student developers.
+                </p>
+
+                <div class="card-footer">
+                    <span>👥 250+ participants</span>
+                    <button onclick="registerEvent()">Join</button>
+                </div>
+
+            </article>
+
+
+            <article class="event-card">
+
+                <div class="event-date">
+                    <strong>22</strong>
+                    <span>SEP</span>
+                </div>
+
+                <div class="event-icon">🎨</div>
+
+                <h3>Creative Carnival</h3>
+
+                <p>
+                    Showcase your creativity through art, design and photography.
+                </p>
+
+                <div class="card-footer">
+                    <span>👥 120+ participants</span>
+                    <button onclick="registerEvent()">Join</button>
+                </div>
+
+            </article>
+
+
+            <article class="event-card">
+
+                <div class="event-date">
+                    <strong>27</strong>
+                    <span>SEP</span>
+                </div>
+
+                <div class="event-icon">🎤</div>
+
+                <h3>Campus Voices</h3>
+
+                <p>
+                    Debate, public speaking and leadership competition.
+                </p>
+
+                <div class="card-footer">
+                    <span>👥 80+ participants</span>
+                    <button onclick="registerEvent()">Join</button>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Clubs -->
+    <section id="clubs" class="clubs-section">
+
+        <div class="section-heading">
+            <div>
+                <p class="small-title">COMMUNITIES</p>
+                <h2>Find Your Club</h2>
+            </div>
+        </div>
+
+
+        <div class="club-grid">
+
+            <div class="club-card">
+                <div class="club-icon">🤖</div>
+                <h3>AI & Robotics</h3>
+                <p>Build the future with technology.</p>
+                <a href="#" onclick="joinClub(event)">Join Club →</a>
+            </div>
+
+            <div class="club-card">
+                <div class="club-icon">💡</div>
+                <h3>Innovation Club</h3>
+                <p>Ideas that can change the world.</p>
+                <a href="#" onclick="joinClub(event)">Join Club →</a>
+            </div>
+
+            <div class="club-card">
+                <div class="club-icon">📸</div>
+                <h3>Photography</h3>
+                <p>Capture moments. Tell stories.</p>
+                <a href="#" onclick="joinClub(event)">Join Club →</a>
+            </div>
+
+            <div class="club-card">
+                <div class="club-icon">🎵</div>
+                <h3>Music Society</h3>
+                <p>Where campus meets creativity.</p>
+                <a href="#" onclick="joinClub(event)">Join Club →</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about-section">
+
+        <div class="about-content">
+
+            <p class="small-title">ABOUT CAMPUSCONNECT</p>
+
+            <h2>
+                Making college life
+                <span>smarter & better.</span>
+            </h2>
+
+            <p>
+                CampusConnect is a modern digital platform designed to bring
+                students, events, clubs and campus activities together in one place.
+            </p>
+
+            <div class="features">
+
+                <div>
+                    <span>✓</span>
+                    <p>Discover Events</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Join Communities</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Stay Updated</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Build Connections</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="about-number">
+            <strong>01</strong>
+            <p>Digital Campus<br>Experience</p>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            ✦ CampusConnect
+        </div>
+
+        <p>
+            Designed for the next generation of students.
+        </p>
+
+        <div class="socials">
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+        </div>
+
+        <div class="copyright">
+            © 2026 CampusConnect. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+
+        <div class="modal-box">
+
+            <button class="close" onclick="closeLogin()">×</button>
+
+            <div class="modal-icon">🎓</div>
+
+            <h2>Student Login</h2>
+
+            <p>Access your campus dashboard.</p>
+
+            <input type="email" placeholder="College Email">
+            <input type="password" placeholder="Password">
+
+            <button class="login-submit" onclick="loginUser()">
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
